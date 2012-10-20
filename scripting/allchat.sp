@@ -81,26 +81,6 @@ public Action:Event_Player_Say(Handle:event, const String:name[], bool:dontBroad
 
 public Action:Command_Say(client, const String:command[], argc)
 {
-	new show = 0; decl String:text[256];
-	GetCmdArgString(text, sizeof(text));
-
-	if (text[strlen(text) - 1] == '"')
-	{
-		text[strlen(text) - 1] = '\0';
-		show				   = 1;
-	}
-
-	if (StrEqual(text[show], "!add")
-	|| StrEqual(text[show],  "!remove")
-	|| StrEqual(text[show],  "!resetrating")
-	|| StrEqual(text[show],  "!rank")
-	|| StrEqual(text[show],  "!stats")
-	|| StrEqual(text[show],  "!top")
-	|| StrEqual(text[show],  "!top10")
-	|| StrEqual(text[show],  "!div")
-	|| StrEqual(text[show],  "!spec"))
-	return Plugin_Handled;
-
 	for (new target = 1; target <= MaxClients; target++)
 		Target[target] = true;
 
