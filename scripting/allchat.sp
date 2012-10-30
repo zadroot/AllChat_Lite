@@ -7,10 +7,10 @@
 public Plugin:myinfo =
 {
 	name = PLUGIN_NAME,
-	author = "Root",
+	author      = "Root",
 	description = "Relays chat messages to all players",
-	version = PLUGIN_VERSION,
-	url = "http://steamcommunity.com/id/zadroot/"
+	version     = PLUGIN_VERSION,
+	url         = "http://steamcommunity.com/id/zadroot/"
 };
 
 new author, bool:Chat, bool:Target[MAXPLAYERS + 1];
@@ -23,7 +23,7 @@ public OnPluginStart()
 	new UserMsg:SayText2 = GetUserMessageId("SayText2");
 
 	if (SayText2 == INVALID_MESSAGE_ID)
-		SetFailState("This game doesn't support SayText2!!");
+		SetFailState("This game doesn't support SayText2!");
 
 	HookUserMessage(SayText2, Hook_UserMessage);
 	HookEvent("player_say",   Event_Player_Say);
